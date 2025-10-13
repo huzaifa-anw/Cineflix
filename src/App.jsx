@@ -44,9 +44,12 @@ function App() {
 
   return (
     <>
-      <h1>cineflix</h1>
-      <p>black purple dark purple</p>
-      <h2>Trending this week</h2>
+      <section className="hero-section">
+        <div className="hook">
+            <div className="title">Cineflix</div>
+            <div className="description">Find your next movie in seconds. Browse new releases, all-time favorites, and hidden gems — everything in one place.</div>
+        </div>
+      </section>
       {
         trendingMovies.map(trendingMovie => {
             return <MovieCard 
