@@ -37,7 +37,7 @@ function App() {
         async function getTrendingMovies() {
             let response = await fetch('https://api.themoviedb.org/3/trending/movie/week', options);
             let data = await response.json();
-            setTrendingMovies(data.results.slice(0,11));
+            setTrendingMovies(data.results.slice(0,10));
         }
         getTrendingMovies();
     }, [])    
