@@ -13,16 +13,14 @@ body{
     height: 100vh;
     background: linear-gradient(
     180deg,
-    #4a0583,
-    #3b0f70,
-    #2a0d55,   
+    #4d0ea0,  
+    #270238, 
     #080808  /* black */
     );
 
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .hook {
@@ -30,6 +28,8 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    bottom: 10vh;
 }
 
 .title {
@@ -48,5 +48,14 @@ body{
 
 .description-bold {
     font-weight: 400;
-    color: rgb(104, 38, 209)
+    color: rgba(38, 209, 195, 1)
+}
+
+.trending-movies-container {
+    display: flex;
+    z-index: 2;
+    position: relative;
+    top: -25vh;
+    overflow: auto;
+    white-space: nowrap;
 }

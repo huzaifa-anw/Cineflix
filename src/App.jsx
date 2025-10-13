@@ -50,16 +50,18 @@ function App() {
             <div className="description">Find your next movie in seconds. Browse <span className='description-bold'>new releases, all-time favorites, and hidden gems</span> — everything in one place.</div>
         </div>
       </section>
-      {
-        trendingMovies.map(trendingMovie => {
-            return <MovieCard 
-                key={trendingMovie.id}
-                title={trendingMovie.original_title} 
-                imageBaseURL={imageBaseURL}
-                posterPath={trendingMovie.poster_path}
-            />
-        })
-      }
+      <div className="trending-movies-container">
+            {
+                trendingMovies.map(trendingMovie => {
+                    return <MovieCard 
+                        key={trendingMovie.id}
+                        title={trendingMovie.original_title} 
+                        imageBaseURL={imageBaseURL}
+                        posterPath={trendingMovie.poster_path}
+                    />
+                })
+            }
+      </div>
     </>
   )
 }
