@@ -1,8 +1,8 @@
-export default function MovieCard () {
+export default function MovieCard ({title, imageBaseURL, posterPath}) {
     return(
         <div className="movie-card">
-            <p>movie title</p>
-            rating: 5
+            <img src={`${imageBaseURL}/w185/${posterPath}`} />
+            <p>{title}</p>
         </div>
     );
 }

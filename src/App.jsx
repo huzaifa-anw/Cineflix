@@ -21,6 +21,8 @@ function App() {
 
     // TODO state for storing popular movies
 
+
+    // get config details (base image url)
     useEffect(() => {
         async function fetchConfig() {
             let response = await fetch(configURL, options);
@@ -30,14 +32,31 @@ function App() {
         fetchConfig();
     }, [])
 
-
+    //get trending movies
+    useEffect(() => {
+        async function getTrendingMovies() {
+            let response = await fetch('https://api.themoviedb.org/3/trending/movie/week', options);
+            let data = await response.json();
+            setTrendingMovies(data.results.slice(0,11));
+        }
+        getTrendingMovies();
+    }, [])    
 
   return (
     <>
       <h1>cineflix</h1>
       <p>black purple dark purple</p>
-      <h2>trending movies: </h2>
-      <MovieCard  />
+      <h2>Trending this week</h2>
+      {
+        trendingMovies.map(trendingMovie => {
+            return <MovieCard 
+                key={trendingMovie.id}
+                title={trendingMovie.original_title} 
+                imageBaseURL={imageBaseURL}
+                posterPath={trendingMovie.poster_path}
+            />
+        })
+      }
     </>
   )
 }
