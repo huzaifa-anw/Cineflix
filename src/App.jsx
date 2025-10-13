@@ -14,7 +14,12 @@ function App() {
     };
 
     // state for storing the base url for accessing images
-    const [imageBaseURL, setImageBaseURL] = useState('');
+    const [ imageBaseURL, setImageBaseURL ] = useState('');
+
+    // state for storing terending movies
+    const [ trendingMovies, setTrendingMovies ] = useState([]);
+
+    // TODO state for storing popular movies
 
     useEffect(() => {
         async function fetchConfig() {
@@ -24,6 +29,8 @@ function App() {
         }
         fetchConfig();
     }, [])
+
+
 
   return (
     <>
