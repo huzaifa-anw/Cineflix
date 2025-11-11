@@ -62,7 +62,7 @@ function App() {
         </div>
       </section>
       <div className="trending-movies">
-        <h1>Trending</h1>
+        <h1>Trending &gt;&gt;</h1>
         <div className="trending-movies-container">
             {
                 trendingMovies.map(trendingMovie => {
@@ -87,6 +87,8 @@ function App() {
                         title={nowPlayingMovie.title}
                         imageBaseURL={imageBaseURL}
                         backDropPath={nowPlayingMovie.backdrop_path}
+                        userVoteAvg={nowPlayingMovie.vote_average}
+                        totalVotes={nowPlayingMovie.vote_count}
                     />
                 })
             }
