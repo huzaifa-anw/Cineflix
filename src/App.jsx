@@ -53,11 +53,13 @@ function App() {
       <div className="trending-movies-container">
             {
                 trendingMovies.map(trendingMovie => {
+                    console.log(trendingMovie);
                     return <MovieCard 
                         key={trendingMovie.id}
                         title={trendingMovie.original_title} 
                         imageBaseURL={imageBaseURL}
                         posterPath={trendingMovie.poster_path}
+                        overview={trendingMovie.overview}
                     />
                 })
             }

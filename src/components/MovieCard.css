@@ -8,6 +8,7 @@
 
 .details-container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
@@ -17,4 +18,14 @@
     font-size: 2vh;
     color: white;
     overflow: visible;
+}
+
+.overview {
+    font-size: 11px;
+    color: lightslategray;
+}
+
+.overview p {
+    max-width: 12vw;
+    overflow: hidden;
 }
