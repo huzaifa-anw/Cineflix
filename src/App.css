@@ -85,3 +85,8 @@ body{
     width: 100vw;
     background-color: #080808; 
 }
+
+.now-playing-movies{
+    margin-left: 1vw;
+    color: whitesmoke;
+}

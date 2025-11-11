@@ -1,4 +1,5 @@
 import './App.css'
+import LargeMovieCard from './components/LargeMovieCard';
 import MovieCard from './components/MovieCard'
 import { useEffect, useState } from 'react';
 
@@ -19,8 +20,8 @@ function App() {
     // state for storing terending movies
     const [ trendingMovies, setTrendingMovies ] = useState([]);
 
-    // TODO state for storing popular movies
-
+    // TODO state for storing now-playing movies
+    const [ nowPlayingMovies, setNowPlayingMovies] = useState([]);
 
     // get config details (base image url)
     useEffect(() => {
@@ -32,7 +33,7 @@ function App() {
         fetchConfig();
     }, [])
 
-    //get trending movies
+    // get trending movies
     useEffect(() => {
         async function getTrendingMovies() {
             let response = await fetch('https://api.themoviedb.org/3/trending/movie/week', options);
@@ -41,6 +42,16 @@ function App() {
         }
         getTrendingMovies();
     }, [])    
+
+    // get now-playing movies
+    useEffect(() => {
+        async function getNowPlayingMovies() {
+            let response = await fetch('https://api.themoviedb.org/3/movie/now_playing', options);
+            let data = await response.json();
+            setNowPlayingMovies(data.results);
+        }
+        getNowPlayingMovies();
+    }, [])
 
   return (
     <>
@@ -55,7 +66,6 @@ function App() {
         <div className="trending-movies-container">
             {
                 trendingMovies.map(trendingMovie => {
-                    console.log(trendingMovie);
                     return <MovieCard 
                         key={trendingMovie.id}
                         title={trendingMovie.original_title} 
@@ -66,9 +76,22 @@ function App() {
             }
         </div>
       </div>
-      <section className="main-section">
-        
-      </section>
+      <div className="now-playing-movies">
+        <h1>Now Playing</h1>
+        <div className="now-playing-movies-container">
+            {
+                nowPlayingMovies.map(nowPlayingMovie => {
+                    console.log(nowPlayingMovie);
+                    return <LargeMovieCard
+                        key={nowPlayingMovie.id}
+                        title={nowPlayingMovie.title}
+                        imageBaseURL={imageBaseURL}
+                        backDropPath={nowPlayingMovie.backdrop_path}
+                    />
+                })
+            }
+        </div>
+      </div>
     </>
   )
 }

@@ -1,0 +1,22 @@
+.large-movie-card {
+    width: fit-content;
+    border: 1px solid #140b14;
+    background-color: #282128;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 1vw;
+    align-items: center;
+}
+
+.image-container img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 30vh;
+}
+
+.details-container {
+    font-weight: 500;
+}
