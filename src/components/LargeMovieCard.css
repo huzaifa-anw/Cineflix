@@ -7,6 +7,11 @@
     flex-direction: column;
     padding: 2vh 1vw;
     align-items: center;
+    transition: transform 0.2s;
+}
+
+.large-movie-card:hover{
+    transform: scale(1.05);
 }
 
 .image-container img{
