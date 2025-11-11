@@ -9,18 +9,19 @@ body{
 }
 
 .hero-section {
+    padding-top: 25vh;
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
     background: linear-gradient(
-    180deg,
-    #4d0ea0,  
-    #270238, 
-    #080808  /* black */
+        180deg,
+        #4d0ea0,  
+        #270238, 
+        #080808
     );
-
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0; /* ensure no margin below */
 }
 
 .hook {
@@ -51,11 +52,36 @@ body{
     color: rgba(38, 209, 195, 1)
 }
 
+.trending-movies {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  background-color: #080808; 
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  position: relative;
+  top: 0; 
+}
+
+
+.trending-movies h1 {
+    color: whitesmoke;
+    margin-left: 1vw;
+}
+
 .trending-movies-container {
     display: flex;
-    z-index: 2;
-    position: relative;
-    top: -25vh;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
+}
+
+.trending-movies-container::-webkit-scrollbar{
+    background-color: #080808
+}
+
+.main-section{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #080808; 
 }

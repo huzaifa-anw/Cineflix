@@ -50,7 +50,9 @@ function App() {
             <div className="description">Find your next movie in seconds. Browse <span className='description-bold'>new releases, all-time favorites, and hidden gems</span> — everything in one place.</div>
         </div>
       </section>
-      <div className="trending-movies-container">
+      <div className="trending-movies">
+        <h1>Trending</h1>
+        <div className="trending-movies-container">
             {
                 trendingMovies.map(trendingMovie => {
                     console.log(trendingMovie);
@@ -62,7 +64,11 @@ function App() {
                     />
                 })
             }
+        </div>
       </div>
+      <section className="main-section">
+        
+      </section>
     </>
   )
 }
