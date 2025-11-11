@@ -59,7 +59,6 @@ function App() {
                         title={trendingMovie.original_title} 
                         imageBaseURL={imageBaseURL}
                         posterPath={trendingMovie.poster_path}
-                        overview={trendingMovie.overview}
                     />
                 })
             }

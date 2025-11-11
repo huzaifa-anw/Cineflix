@@ -1,6 +1,6 @@
 import './MovieCard.css'
 
-export default function MovieCard ({title, imageBaseURL, posterPath, overview}) {
+export default function MovieCard ({title, imageBaseURL, posterPath}) {
     return(
         <div className="movie-card">
             <div className="poster-container">
@@ -9,9 +9,6 @@ export default function MovieCard ({title, imageBaseURL, posterPath, overview}) 
             <div className="details-container">
                 <div className="title">
                     <p>{title}</p>
-                </div>
-                <div className='overview'>
-                    <p>{overview}</p>
                 </div>
             </div>
         </div>
