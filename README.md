@@ -1,16 +1,36 @@
-# React + Vite
+# 🎬 CineFlix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CineFlix is a sleek movie-browsing web app built with React and Vite.  
+It fetches movie data from TMDB and displays trending titles, user ratings, and details in a clean, responsive layout.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📝 Project Overview
 
-## React Compiler
+CineFlix lets users explore movies in a modern, visually engaging interface.  
+The app fetches data dynamically from The Movie Database (TMDB) API and shows key info like title, rating, and posters.  
+It’s built with simplicity and scalability in mind — modular components, reusable logic, and smooth rendering via React hooks.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse trending and popular movies  
+- Search for specific titles  
+- View details like poster, rating, and vote count  
+- Responsive, clean layout  
+- Built with modern React + Vite setup for fast performance
+
+---
+
+## 🧰 Tech Stack
+
+**Frontend:** React (with Vite)  
+**Styling:** CSS (custom, modular)  
+**API:** TMDB (The Movie Database API)  
+**Utilities:** React Hooks, Fetch API  
+**Build Tooling:** Vite + ESLint  
+
+---
+
+🚀 *Built with love and a passion for clean UIs.*
