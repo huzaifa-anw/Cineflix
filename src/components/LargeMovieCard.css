@@ -19,6 +19,7 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     height: 30vh;
+    min-width: 300px;
 }
 
 .details-container {

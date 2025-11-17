@@ -23,7 +23,7 @@ function App() {
 
     // TODO state for storing now-playing movies
     const [ nowPlayingMovies, setNowPlayingMovies] = useState([]);
-    const [ isNPMloaded, setIsNPMLoaded ] = useState(false);
+    const [ isNPMLoaded, setIsNPMLoaded ] = useState(false);
 
     // get config details (base image url)
     useEffect(() => {
@@ -92,8 +92,8 @@ function App() {
         <h1>Now Playing</h1>
         <div className="now-playing-movies-container">
             {
+                isNPMLoaded ?
                 nowPlayingMovies.map(nowPlayingMovie => {
-                    console.log(nowPlayingMovie);
                     return <LargeMovieCard
                         key={nowPlayingMovie.id}
                         title={nowPlayingMovie.title}
@@ -101,6 +101,13 @@ function App() {
                         backDropPath={nowPlayingMovie.backdrop_path}
                         userVoteAvg={nowPlayingMovie.vote_average}
                         totalVotes={nowPlayingMovie.vote_count}
+                        isNPMLoaded={isNPMLoaded}
+                    />
+                }) :
+                Array.from({length: 9}).map((v, i) => {
+                    return <MovieCard 
+                        key={i}
+                        isNPMLoaded={isNPMLoaded}
                     />
                 })
             }

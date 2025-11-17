@@ -5,7 +5,7 @@ export default function MovieCard ({title, imageBaseURL, posterPath, isTMLoaded}
     return(
         <div className="movie-card">
             <div className="poster-container">
-                {isTMLoaded ?  <img src={`${imageBaseURL}/w185/${posterPath}`} /> : <Skeleton variant="rectangular" width={185} height={278} />}
+                {isTMLoaded ?  <img src={`${imageBaseURL}/w185/${posterPath}`} /> : <Skeleton animation="wave" variant="rectangular" width={185} height={278} />}
             </div>
             <div className="details-container">
                 <div className="title">
