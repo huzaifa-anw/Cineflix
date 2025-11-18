@@ -28,9 +28,13 @@ function App() {
     // get config details (base image url)
     useEffect(() => {
         async function fetchConfig() {
-            let response = await fetch(configURL, options);
-            let data = await response.json();
-            setImageBaseURL(data.images.base_url);
+            try {
+                let response = await fetch(configURL, options);
+                let data = await response.json();
+                setImageBaseURL(data.images.base_url);
+            } catch (e) {
+                console.error(e);
+            }
         }
         fetchConfig();
     }, [])
@@ -38,10 +42,14 @@ function App() {
     // get trending movies
     useEffect(() => {
         async function getTrendingMovies() {
-            let response = await fetch('https://api.themoviedb.org/3/trending/movie/week', options);
-            let data = await response.json();
-            setTrendingMovies(data.results.slice(0,10));
-            setIsTMLoaded(true);
+            try {
+                let response = await fetch('https://api.themoviedb.org/3/trending/movie/week', options);
+                let data = await response.json();
+                setTrendingMovies(data.results.slice(0,10));
+                setIsTMLoaded(true);
+            } catch (e) {
+                console.error(e);
+            }
         }
         getTrendingMovies();
     }, [])    
@@ -49,10 +57,14 @@ function App() {
     // get now-playing movies
     useEffect(() => {
         async function getNowPlayingMovies() {
-            let response = await fetch('https://api.themoviedb.org/3/movie/now_playing', options);
-            let data = await response.json();
-            setNowPlayingMovies(data.results);
-            setIsNPMLoaded(true);
+            try {
+                let response = await fetch('https://api.themoviedb.org/3/movie/now_playing', options);
+                let data = await response.json();
+                setNowPlayingMovies(data.results);
+                setIsNPMLoaded(true);
+            } catch (e) {
+                console.error(e);
+            }
         }
         getNowPlayingMovies();
     }, [])
